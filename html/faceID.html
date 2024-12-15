@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Detection Test</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
+  </head>
+  <body style="text-align: center; background: #0ea5e9; color: white; font-family: Arial, sans-serif;">
+    <h1>Face Detection Test</h1>
+    <video id="webcam" autoplay style="border: 2px solid white; border-radius: 8px; width: 300px;"></video>
+    <p id="status">Loading models...</p>
+
+    <script>
+      const webcam = document.getElementById("webcam");
+      const statusText = document.getElementById("status");
+
+      // Start Webcam
+      async function startWebcam() {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+          webcam.srcObject = stream;
+        } catch (error) {
+          console.error("Webcam error:", error);
+          statusText.textContent = "Unable to access the webcam.";
+        }
+      }
+
+      // Load Models and Start Face Detection
+      async function loadModels() {
+        try {
+            await faceapi.nets.tinyFaceDetector.loadFromUri("../models");
+
+          statusText.textContent = "Models loaded. Detecting faces...";
+          detectFaces();
+        } catch (error) {
+          console.error("Model loading error:", error);
+          statusText.textContent = "Failed to load models.";
+        }
+      }
+
+      // Face Detection
+      async function detectFaces() {
+        const options = new faceapi.TinyFaceDetectorOptions();
+        setInterval(async () => {
+          const detections = await faceapi.detectAllFaces(webcam, options);
+          console.log("Detections:", detections);
+          if (detections.length > 0) {
+            statusText.textContent = "Face detected!";
+          } else {
+            statusText.textContent = "No face detected.";
+          }
+        }, 500);
+      }
+
+      // Initialize
+      window.onload = async () => {
+        await startWebcam();
+        await loadModels();
+      };
+    </script>
+  </body>
+</html>

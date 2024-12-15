@@ -1,6 +1,8 @@
-.logo img {
-    width: 15rem; /* Consistent size */
+
+  .logo img {
+    width: 15rem;
     position: absolute;
     top: 20px;
     right: 20px;
-}
+  }
+  

@@ -1,0 +1,40 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tajawal", sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Search Input */
+.search-input {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Buttons */
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+}
+
+.bg-green-600 {
+  background-color: #22c55e;
+}
+
+.bg-green-600:hover {
+  background-color: #16a34a;
+}
