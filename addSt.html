@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/src/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/src/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/src/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/src/android-chrome-512x512.png">
+<link rel="icon" type="image/x-icon" href="/src/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة طالب</title>
+    <link rel="stylesheet" href="/css/addST.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <!-- Gradient Background -->
+    <div class="gradient-bg">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/src/logo.png" alt="Logo" class="logo-img">
+            </div>
+
+            <!-- Page Title -->
+            <h2 class="page-title">إضافة طالب جديد</h2>
+
+            <!-- Input Section -->
+            <div class="input-section">
+                <div class="input-row">
+                    <div class="input-box">
+                        <label for="firstName">الاسم الأول</label>
+                        <input type="text" id="firstName" placeholder="الاسم الأول">
+                    </div>
+                    <div class="input-box">
+                        <label for="fatherName">اسم الأب</label>
+                        <input type="text" id="fatherName" placeholder="اسم الأب">
+                    </div>
+                </div>
+                <div class="input-row">
+                    <div class="input-box">
+                        <label for="lastName">اللقب</label>
+                        <input type="text" id="lastName" placeholder="اللقب">
+                    </div>
+                    <div class="input-box">
+                        <label for="classSelect">الفصل</label>
+                        <select id="classSelect">
+                            <option value="grade1">الصف الأول</option>
+                            <option value="grade2">الصف الثاني</option>
+                            <option value="grade3">الصف الثالث</option>
+                            <option value="grade4">الصف الرابع</option>
+                            <option value="grade5">الصف الخامس</option>
+                            <option value="grade6">الصف السادس</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="button-group">
+                <button class="success-button" onclick="addStudent()">إضافة طالب</button>
+                <button class="back-button" onclick="window.history.back()">← الرجوع إلى الخلف</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/addSt.js"></script>
+</body>
+</html>

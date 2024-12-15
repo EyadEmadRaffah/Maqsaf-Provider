@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/src/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/src/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/src/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/src/android-chrome-512x512.png">
+<link rel="icon" type="image/x-icon" href="/src/favicon.ico">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شحن المحفظة</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-sky-400 to-teal-700 min-h-screen flex flex-col items-center justify-center text-white font-[Tajawal]">
+
+    <!-- Logo -->
+    <div class="absolute top-5 right-5">
+        <img src="/src/logo.png" alt="Maqsaf Logo" class="w-40">
+    </div>
+
+    <!-- Main Content -->
+    <div class="bg-[#00334e] rounded-2xl p-8 w-full max-w-md shadow-lg">
+        <!-- Student Profile -->
+        <div class="flex items-center gap-4 mb-6">
+            <img src="https://thumbs.dreamstime.com/b/child-girl-schoolgirl-elementary-school-student-123686003.jpg" alt="Student Image"
+                 class="w-16 h-16 rounded-full object-cover">
+            <div>
+                <p class="text-lg font-bold">محمد عبدالله الحربي</p>
+                <p class="text-gray-300 text-sm">الصف 1 أ ب</p>
+            </div>
+        </div>
+
+        <!-- Input Amount -->
+        <div class="mb-6">
+            <input type="number" id="rechargeAmount" placeholder="الرجاء إدخال المبلغ المطلوب شحنه"
+                   class="w-full p-3 rounded-lg text-gray-700 text-center focus:outline-none">
+        </div>
+
+        <!-- Recharge Button -->
+        <div class="flex justify-center mb-4">
+            <button class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-lg flex items-center gap-2 transition" onclick="rechargeWallet()">
+                <span>شحن المحفظة</span>
+                <span>💳</span>
+            </button>
+        </div>
+
+        <!-- Confirmation Message -->
+        <div id="confirmationMessage" class="text-center text-green-400 font-bold mt-4 hidden">
+            <!-- Success message will appear here -->
+        </div>
+
+        <!-- Back Button -->
+        <div class="flex justify-center mt-4">
+            <button onclick="goBack()" class="bg-[#00253b] hover:bg-[#001e30] py-2 px-6 rounded-lg">
+                ← الرجوع إلى الخلف
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Function to Recharge Wallet
+        function rechargeWallet() {
+            const inputField = document.getElementById("rechargeAmount");
+            const amount = parseFloat(inputField.value);
+            const confirmationMessage = document.getElementById("confirmationMessage");
+
+            // Check if the input is valid
+            if (amount && amount >= 1) {
+                confirmationMessage.innerHTML = `تم شحن المحفظة بمبلغ <span class="text-yellow-300">${amount.toFixed(2)} ريال</span> بنجاح.`;
+                confirmationMessage.classList.remove("hidden");
+                inputField.value = ""; // Clear the input field
+            } else {
+                alert("الرجاء إدخال مبلغ صحيح أكبر من أو يساوي 1 ريال!");
+                inputField.value = ""; // Clear invalid input
+            }
+        }
+
+        // Go Back Function
+        function goBack() {
+            window.history.back();
+        }
+
+        // Prevent Negative Values in Input
+        document.getElementById("rechargeAmount").addEventListener("input", function (e) {
+            if (e.target.value < 1) {
+                e.target.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
