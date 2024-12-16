@@ -1,63 +1,76 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Face Detection Test</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js"></script>
-  </head>
-  <body style="text-align: center; background: #0ea5e9; color: white; font-family: Arial, sans-serif;">
-    <h1>Face Detection Test</h1>
-    <video id="webcam" autoplay style="border: 2px solid white; border-radius: 8px; width: 300px;"></video>
-    <p id="status">Loading models...</p>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/global.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face ID Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <script>
-      const webcam = document.getElementById("webcam");
-      const statusText = document.getElementById("status");
 
-      // Start Webcam
-      async function startWebcam() {
-        try {
-          const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-          webcam.srcObject = stream;
-        } catch (error) {
-          console.error("Webcam error:", error);
-          statusText.textContent = "Unable to access the webcam.";
-        }
-      }
 
-      // Load Models and Start Face Detection
-      async function loadModels() {
-        try {
-            await faceapi.nets.tinyFaceDetector.loadFromUri("../models");
 
-          statusText.textContent = "Models loaded. Detecting faces...";
-          detectFaces();
-        } catch (error) {
-          console.error("Model loading error:", error);
-          statusText.textContent = "Failed to load models.";
-        }
-      }
+  <div class="container">
 
-      // Face Detection
-      async function detectFaces() {
-        const options = new faceapi.TinyFaceDetectorOptions();
-        setInterval(async () => {
-          const detections = await faceapi.detectAllFaces(webcam, options);
-          console.log("Detections:", detections);
-          if (detections.length > 0) {
-            statusText.textContent = "Face detected!";
-          } else {
-            statusText.textContent = "No face detected.";
-          }
-        }, 500);
-      }
+    <!-- Logo -->
+    <div class="logo">
+        <img src="/src/logo.png" alt="Logo">
+    </div>
 
-      // Initialize
-      window.onload = async () => {
-        await startWebcam();
-        await loadModels();
-      };
-    </script>
-  </body>
+  <style>
+    
+    body {
+
+      
+
+      background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+      font-family: "Tajawal", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #121212;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 5rem;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    #scanningText {
+      position: absolute;
+      top: 10%; /* Move text 50% from the top */
+      left: 50%; /* Move text 50% from the left */
+      transform: translate(-50%, -50%); /* Center the text perfectly */
+      font-size: 2rem;
+      color: #00df9a;
+      animation: scanEffect 1.5s infinite;
+      text-align: center; /* Works if text is multi-line */
+    }
+
+    @keyframes scanEffect {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>الرجاء النظر الى الكاميرا</h1>
+  <div id="scanningText">🔍 يتم التعرف على الوجه</div>
+  <video id="video" autoplay muted width="720" height="560" style="position: relative;"></video>
+  <script defer src="/js/face-api.min.js"></script>
+  <script defer src="/js/faceID.js"></script>
+</body>
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قائمة الطعام</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <style>
+      body {
+        font-family: "Tajawal", sans-serif;
+        background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+        color: #000;
+      }
+
+      .menu-card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+      }
+      .menu-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .navigation-button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #10b981;
+        color: white;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.3s;
+      }
+      .navigation-button:hover {
+        background-color: #059669;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center min-h-screen">
+    <!-- Logo -->
+    <div class="absolute top-8 right-8">
+      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-32" />
+    </div>
+
+    <!-- Page Title -->
+    <h1 class="text-3xl font-bold text-white mb-8 text-center">
+      مرحبا محمد الحربي <br />إيش طلبك اليوم؟
+    </h1>
+
+    <!-- Food Menu Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mb-8">
+      <!-- Food Item 1 -->
+      <div class="menu-card bg-white rounded-xl p-4 flex flex-col items-center">
+        <img src="/images/cookie.png" alt="كوكيز" class="w-32 h-32 mb-4" />
+        <p class="text-lg font-bold">كوكيز</p>
+      </div>
+
+      <!-- Food Item 2 -->
+      <div class="menu-card bg-white rounded-xl p-4 flex flex-col items-center">
+        <img src="/images/tuna-sandwich.png" alt="ساندوتش تونه" class="w-32 h-32 mb-4" />
+        <p class="text-lg font-bold">ساندوتش تونه</p>
+      </div>
+
+      <!-- Food Item 3 -->
+      <div class="menu-card bg-white rounded-xl p-4 flex flex-col items-center">
+        <img src="/images/egg-cheese-sandwich.png" alt="ساندوتش جبنه بيضا" class="w-32 h-32 mb-4" />
+        <p class="text-lg font-bold">ساندوتش جبنه بيضا</p>
+      </div>
+
+      <!-- Food Item 4 -->
+      <div class="menu-card bg-white rounded-xl p-4 flex flex-col items-center">
+        <img src="/images/croissant.png" alt="كرواسون جبنه" class="w-32 h-32 mb-4" />
+        <p class="text-lg font-bold">كرواسون جبنه</p>
+      </div>
+
+      <!-- Food Item 5 -->
+      <div class="menu-card bg-white rounded-xl p-4 flex flex-col items-center">
+        <img src="/images/tuna-salad.png" alt="سلطة تونه" class="w-32 h-32 mb-4" />
+        <p class="text-lg font-bold">سلطة تونه</p>
+      </div>
+
+      <!-- Food Item 6 -->
+      <div class="menu-card bg-white rounded-xl p-4 flex flex-col items-center">
+        <img src="/images/tuna-sandwich.png" alt="ساندوتش تونه" class="w-32 h-32 mb-4" />
+        <p class="text-lg font-bold">ساندوتش تونه</p>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="flex items-center justify-center gap-8 mt-4">
+      <!-- Previous Button -->
+      <button class="navigation-button">
+        <i class="fa fa-arrow-right"></i>
+      </button>
+
+      <!-- Next Button -->
+      <button class="navigation-button">
+        <i class="fa fa-arrow-left"></i>
+      </button>
+    </div>
+  </body>
+</html>

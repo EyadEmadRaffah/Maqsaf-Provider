@@ -1,69 +1,20 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Tajawal', sans-serif;
-}
-
 body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
   color: #ffffff;
-  direction: rtl;
+  font-family: "Tajawal", sans-serif;
 }
 
-/* Buttons Section */
-.grid-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #ffffff;
-  color: #000;
-  border-radius: 12px;
-  padding: 20px;
+.floating-bar {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-card {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  width: 220px; /* Wider buttons */
+  height: 150px; /* Taller buttons */
 }
 
-.grid-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
-}
-
-.grid-item .icon {
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-}
-
-.grid-item span {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-/* Add Button */
-.add-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #0a4b56;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  text-decoration: none;
-  transition: background 0.3s ease;
-}
-
-.add-button i {
-  margin-left: 8px;
-}
-
-.add-button:hover {
-  background: #083a43;
+.worker-container {
+  min-width: 280px; /* Fix width */
+  padding: 12px 20px; /* Add space */
 }
