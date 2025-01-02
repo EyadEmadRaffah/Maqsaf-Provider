@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>مقصف - إدارة المخزون</title>
+    <link rel="stylesheet" href="/css/global.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,30 +26,38 @@
     <link rel="stylesheet" href="/css/storeageOP.css" />
   </head>
   <body class="h-screen flex flex-col items-center bg-gradient-to-b from-[#0ea5e9] to-[#115e59] font-[Tajawal]">
+
+    
+        <!-- Logo -->
+        <div class="logo">
+          <img src="/src/logo.png" alt="Logo">
+      </div>
+
+
     <!-- Top Bar Section -->
     <div
       class="w-11/12 max-w-5xl mx-auto bg-[#0a4b56] rounded-3xl mt-6 p-4 flex justify-around items-center text-white floating-bar"
     >
       <!-- Home -->
-      <a href="#" class="flex flex-col items-center hover:text-gray-300">
+      <a href="/html/home.html" class="flex flex-col items-center hover:text-gray-300">
         <i class="fa fa-home text-2xl mb-1"></i>
         <span class="text-sm">الصفحة الرئيسية</span>
       </a>
 
       <!-- Create Order -->
-      <a href="#" class="flex flex-col items-center hover:text-gray-300">
+      <a href="/html/newOrder.html" class="flex flex-col items-center hover:text-gray-300">
         <i class="fa fa-cart-plus text-2xl mb-1"></i>
         <span class="text-sm">إنشاء طلب</span>
       </a>
 
       <!-- Menu -->
-      <a href="#" class="flex flex-col items-center hover:text-gray-300">
+      <a href="/html/menu.html" class="flex flex-col items-center hover:text-gray-300">
         <i class="fa fa-list text-2xl mb-1"></i>
         <span class="text-sm">قائمة الطعام</span>
       </a>
 
       <!-- Monitor Data -->
-      <a href="#" class="flex flex-col items-center hover:text-gray-300">
+      <a href="/html/income.html" class="flex flex-col items-center hover:text-gray-300">
         <i class="fa fa-database text-2xl mb-1"></i>
         <span class="text-sm">مراقبة البيانات</span>
       </a>
@@ -59,6 +68,7 @@
         <span class="text-sm">المخزون</span>
       </a>
     </div>
+
 
     <!-- Search Bar -->
     <div class="w-11/12 max-w-md mt-12 mb-8">

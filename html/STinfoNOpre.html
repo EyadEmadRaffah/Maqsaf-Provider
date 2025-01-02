@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الطالب</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+        color: #ffffff;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .student-info {
+        max-width: 600px;
+        background-color: #1a3f4e;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      .student-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .status-badge {
+        background-color: #ef4444;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 9999px;
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .buttons-container {
+        max-width: 500px;
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+      }
+
+      .custom-button {
+        background-color: #ffffff;
+        color: #0ea5e9;
+        border-radius: 8px;
+        padding: 16px 24px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .custom-button:hover {
+        background-color: #0ea5e9;
+        color: #ffffff;
+      }
+
+      .bottom-buttons {
+        margin-top: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .bottom-button {
+        width: 240px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        background-color: #083a43;
+        color: #ffffff;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      .bottom-button:hover {
+        background-color: #0ea5e9;
+      }
+
+      .progress-bar {
+        background-color: #d1d5db;
+        height: 10px;
+        width: 100%;
+        border-radius: 9999px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .progress-bar-fill {
+        height: 100%;
+        background-color: #10b981;
+      }
+
+      .progress-percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.9rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col items-center justify-center min-h-screen">
+    <!-- Student Name -->
+    <h1 class="text-3xl font-bold mb-8">اسم الطالب</h1>
+
+    <!-- Student Info -->
+    <div class="student-info">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <img
+            src="/src/student.png"
+            alt="Student Avatar"
+            class="w-16 h-16 rounded-full"
+          />
+          <div class="text-right">
+            <p class="student-name">محمد عبدالله الحربي</p>
+            <p>الحد اليومي: 10 ريال</p>
+            <p>الرصيد الحالي: 55 ريال</p>
+            <p>رقم الطالب: 0001</p>
+          </div>
+        </div>
+        <div>
+          <span class="status-badge">لا يوجد طلب مسبق لليوم</span>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="mt-4">
+        <p class="text-sm mb-1 text-gray-200">نقاط الطالب</p>
+        <div class="progress-bar">
+          <div class="progress-bar-fill" style="width: 65%;"></div>
+          <span class="progress-percentage">65%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="buttons-container mt-12">
+      <button class="custom-button">
+        <i class="fa fa-clock text-2xl mb-2"></i>
+        <p>عمليات الشراء</p>
+      </button>
+      <button class="custom-button">
+        <i class="fa fa-ban text-2xl mb-2"></i>
+        <p>الأطعمة المحذوفة</p>
+      </button>
+    </div>
+
+    <!-- Bottom Buttons -->
+    <div class="bottom-buttons mt-12">
+      <a href="/html/menu.html" class="bottom-button">
+        <i class="fa fa-cart-plus"></i> إنشاء طلب
+      </a>
+      <a href="javascript:history.back()" class="bottom-button">
+        <i class="fa fa-arrow-left"></i> الرجوع إلى الخلف
+      </a>
+    </div>
+  </body>
+</html>

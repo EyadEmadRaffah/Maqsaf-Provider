@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>إنشاء طلب جديد</title>
+    
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,12 +23,15 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="/css/newOrder.css" />
+    <link rel="stylesheet" href="/css/global.css">
+    
   </head>
   <body class="flex flex-col items-center justify-center min-h-screen">
-    <!-- Logo -->
-    <div class="absolute top-8 right-8">
-      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-32" />
-    </div>
+
+        <!-- Logo -->
+        <div class="logo">
+          <img src="/src/logo.png" alt="Logo">
+      </div>
 
     <!-- Page Title -->
     <h1 class="text-3xl font-bold text-white mb-8">إنشاء طلب جديد</h1>
@@ -81,13 +85,13 @@
 
     <!-- Back Button -->
     <div class="absolute bottom-8 left-8">
-      <a
-        href="home.html"
+      <button
+        onclick="window.history.back()"
         class="bg-[#0a4b56] hover:bg-[#083a43] text-white py-2 px-4 rounded-lg flex items-center gap-2 shadow-lg"
       >
         <span>الرجوع الى الخلف</span>
         <i class="fa fa-arrow-left"></i>
-      </a>
+      </button>
     </div>
 
     <!-- JavaScript -->
@@ -98,8 +102,8 @@
         const idValue = inputField.value.trim();
 
         if (/^\d{8}$/.test(idValue)) {
-          // If the input matches exactly 8 digits, redirect
-          window.location.href = "/html/faceID.html";
+          // If the input matches exactly 8 digits, redirect to the correct page
+          window.location.href = "/html/STinfoNOpre.html";
         } else {
           // Show error message if invalid
           errorMessage.classList.remove("hidden");

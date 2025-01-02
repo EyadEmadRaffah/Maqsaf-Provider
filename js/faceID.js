@@ -40,7 +40,8 @@ video.addEventListener('playing', () => {
       document.getElementById('scanningText').style.display = 'block';
 
       setTimeout(() => {
-        window.location.href = '/html/donefaceID.html';
+        // Redirect to STinfo.html instead of donefaceID.html
+        window.location.href = '/HTML/STinfoNOpre.html';
       }, scanningTime);
     }
   }, 500);

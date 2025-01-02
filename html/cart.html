@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>السلة</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+        font-family: "Tajawal", sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .cart-title {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 24px;
+        background: #1a3f4e;
+        padding: 16px 32px;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .cart-container {
+        max-width: 900px;
+        width: 90%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        padding: 16px;
+      }
+
+      .cart-item {
+        background: #ffffff;
+        color: #333333;
+        border-radius: 12px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .cart-item img {
+        width: 100px;
+        height: auto;
+        border-radius: 8px;
+      }
+
+      .cart-item h3 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0;
+        text-align: center;
+      }
+
+      .cart-item .price {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #10b981;
+      }
+
+      .cart-item button {
+        background-color: #ef4444;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .cart-item button:hover {
+        background-color: #dc2626;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .action-button {
+        background-color: #0a4b56;
+        color: white;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .action-button:hover {
+        background-color: #083a43;
+      }
+
+      .complete-button {
+        background-color: #10b981;
+      }
+
+      .complete-button:hover {
+        background-color: #059669;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cart Title -->
+    <div class="cart-title">السلة</div>
+
+    <!-- Cart Container -->
+    <div class="cart-container">
+      <!-- Item 1 -->
+      <div class="cart-item">
+        <img src="/images/egg-cheese-sandwich.png" alt="Food Item 1" />
+        <h3>ساندوتش جبنة بيضاء</h3>
+        <p class="price">$40.00</p>
+        <button>إزالة</button>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item">
+        <img src="/images/tuna-sandwich.png" alt="Food Item 2" />
+        <h3>ساندوتش تونة</h3>
+        <p class="price">$45.00</p>
+        <button>إزالة</button>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="cart-item">
+        <img src="/images/fruit-salad.png" alt="Food Item 3" />
+        <h3>سلطة فواكه</h3>
+        <p class="price">$60.00</p>
+        <button>إزالة</button>
+      </div>
+    </div>
+
+<!-- Action Buttons -->
+<div class="action-buttons">
+    <button class="action-button complete-button" onclick="window.location.href='payment.html'">اتمام الطلب</button>
+    <button class="action-button" onclick="window.history.back()">الرجوع الى القائمة</button>
+  </div>
+  
+  </body>
+</html>
