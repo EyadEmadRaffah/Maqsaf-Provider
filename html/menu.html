@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>قائمة الطعام</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%; /* Ensure background covers full height */
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+        color: #ffffff;
+        font-family: "Tajawal", sans-serif;
+      }
+
+      .floating-bar {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .worker-container {
+        padding: 16px 24px; /* Add more padding for a cleaner look */
+        min-width: 280px; /* Keep the consistent width */
+        border-radius: 12px; /* Smooth rounded corners */
+        background-color: #1a3f4e; /* Match the design */
+        display: flex;
+        align-items: center;
+        gap: 16px; /* Add spacing between image and text */
+        color: #ffffff;
+      }
+
+      .worker-container img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%; /* Make the image circular */
+      }
+
+      .worker-container .text-container {
+        flex: 1; /* Ensure the text takes available space */
+      }
+
+      .worker-container .text-container p {
+        margin: 4px 0; /* Add spacing between lines of text */
+        font-size: 14px;
+        color: #d1d5db; /* Use a lighter gray for job title and ID */
+      }
+
+      .worker-container .text-container p:first-child {
+        font-size: 16px;
+        font-weight: bold; /* Highlight the worker's name */
+        color: #ffffff;
+      }
+
+      .menu-card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .menu-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .category-button {
+        background-color: white;
+        color: #0ea5e9;
+        padding: 12px 20px; /* Increased padding for better spacing */
+        border-radius: 9999px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s;
+        margin: 5px; /* Added margin between buttons */
+      }
+
+      .category-button:hover {
+        background-color: #0ea5e9;
+        color: white;
+      }
+
+      .navigation-button {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: #10b981;
+        color: white;
+        font-size: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.3s;
+      }
+
+      .navigation-button:hover {
+        background-color: #059669;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="main-container flex flex-col items-center justify-start">
+    <!-- Top Bar Section -->
+    <div
+      class="w-11/12 max-w-5xl mx-auto bg-[#0a4b56] rounded-3xl mt-6 p-4 flex justify-around items-center text-white floating-bar"
+    >
+      <!-- Home -->
+      <a href="/html/home.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-home text-2xl mb-1"></i>
+        <span class="text-sm">الصفحة الرئيسية</span>
+      </a>
+
+      <!-- Create Order -->
+      <a href="/html/newOrder.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-cart-plus text-2xl mb-1"></i>
+        <span class="text-sm">إنشاء طلب</span>
+      </a>
+
+      <!-- Menu -->
+      <a href="/html/menu.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-list text-2xl mb-1"></i>
+        <span class="text-sm">قائمة الطعام</span>
+      </a>
+
+      <!-- Monitor Data -->
+      <a href="/html/income.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-database text-2xl mb-1"></i>
+        <span class="text-sm">مراقبة البيانات</span>
+      </a>
+
+      <!-- Inventory -->
+      <a href="/html/storeageOP.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-archive text-2xl mb-1"></i>
+        <span class="text-sm">المخزون</span>
+      </a>
+    </div>
+
+    <!-- User Profile Container -->
+    <div
+      class="absolute top-6 right-6 bg-[#1a3f4e] rounded-xl worker-container flex items-center gap-4 text-white"
+    >
+      <div class="text-right">
+        <p class="font-bold text-lg">عبدالله الزميلي</p>
+        <p class="text-sm text-gray-300">المسمى الوظيفي: كاشير</p>
+        <p class="text-sm text-gray-300">رقم الموظف: 1</p>
+      </div>
+      <img
+        src="/src/worker.png"
+        alt="User Avatar"
+        class="w-16 h-16 rounded-full"
+      />
+    </div>
+
+<!-- Search and Filters -->
+<div class="mx-auto max-w-6xl mt-24">
+    <div class="flex items-center gap-4">
+      <!-- Cart Button -->
+      <button class="relative">
+        <i class="fa fa-shopping-cart text-2xl text-white"></i> <!-- Changed to white -->
+        <span
+          class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+        >
+          1
+        </span>
+      </button>
+  
+      <!-- Search Bar -->
+      <div class="flex-grow">
+        <input
+          type="text"
+          placeholder="بحث عن صنف"
+          class="w-full p-2 rounded-lg border border-gray-300"
+        />
+      </div>
+      <!-- Search Icon -->
+      <i class="fa fa-search text-xl text-white"></i> <!-- Changed to white -->
+    </div>
+  
+    <!-- Filters -->
+    <div class="flex flex-wrap justify-between mt-4 gap-4">
+      <button class="category-button">كل القائمة</button>
+      <button class="category-button">المشروبات</button>
+      <button class="category-button">الحلويات</button>
+      <button class="category-button">السلطات</button>
+      <button class="category-button">السندوتشات</button>
+      <button class="category-button">المخبوزات</button>
+      <button class="category-button">الوجبات الجاهزة</button>
+    </div>
+  </div>
+  
+<!-- Food Items Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-6xl mt-8">
+    <!-- Sandwich -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/egg-cheese-sandwich.png" alt="ساندوتش" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">ساندوتش جبنة بيضا</p>
+        <p class="text-sm text-gray-500">300 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$2.00</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Tuna Sandwich -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/tuna-sandwich.png" alt="ساندوتش تونة" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">ساندوتش تونة</p>
+        <p class="text-sm text-gray-500">180 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$3.00</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Fruit Salad -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/fruit-salad.png" alt="سلطة فواكه" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">سلطة فواكه</p>
+        <p class="text-sm text-gray-500">70 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$5.00</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Chocolate Chip Cookie -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/cookie.png" alt="كوكيز شوكولاته" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">كوكيز شوكولاته</p>
+        <p class="text-sm text-gray-500">500 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$2.00</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Croissant -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/croissant.png" alt="كرواسون ساده" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">كرواسون ساده</p>
+        <p class="text-sm text-gray-500">150 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$3.00</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Juice Box -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/juice-box.png" alt="عصير" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">عصير طبيعي</p>
+        <p class="text-sm text-gray-500">120 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$1.50</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Pizza Slice -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/pizza-slice.png" alt="شريحة بيتزا" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">شريحة بيتزا</p>
+        <p class="text-sm text-gray-500">220 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$4.00</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Chocolate Muffin -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/muffin.png" alt="كب كيك شوكولاتة" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">كب كيك شوكولاتة</p>
+        <p class="text-sm text-gray-500">400 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$2.50</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  
+    <!-- Milkshake -->
+    <div class="menu-card bg-white p-4 rounded-lg flex items-center">
+      <img src="/images/milkshake.png" alt="ميلك شيك" class="w-16 h-16" />
+      <div class="ml-4 flex-grow">
+        <p class="font-bold text-lg">ميلك شيك</p>
+        <p class="text-sm text-gray-500">350 سعره حرارية</p>
+      </div>
+      <div class="flex flex-col items-center">
+        <p class="font-bold text-xl">$3.50</p>
+        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+      </div>
+    </div>
+  </div>
+  
+
+      <!-- Navigation Buttons -->
+      <div class="flex justify-center gap-8 mt-8">
+        <button class="navigation-button">
+          <i class="fa fa-arrow-right"></i>
+        </button>
+        <button class="navigation-button">
+          <i class="fa fa-arrow-left"></i>
+        </button>
+      </div>
+
+<!-- Bottom Buttons Section -->
+<div class="flex justify-between mx-auto max-w-6xl mt-8 gap-4">
+    <!-- Complete Order Button -->
+    <a
+      href="/html/cart.html"
+      class="bg-[#10b981] text-white px-8 py-3 rounded-lg hover:bg-[#059669] transition w-48 text-center"
+    >
+      اتمام الطلب
+    </a>
+
+    <!-- Back Button -->
+    <button
+      onclick="window.history.back()"
+      class="bg-[#083a43] text-white px-8 py-3 rounded-lg hover:bg-[#0ea5e9] transition w-48 text-center"
+    >
+      الرجوع الى الخلف
+    </button>
+</div>
+
+  </body>
+</html>

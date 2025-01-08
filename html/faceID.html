@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/global.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face ID Detection</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+
+
+
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="/src/logo.png" alt="Logo">
+    </div>
+
+  <style>
+    
+    body {
+
+      
+
+      background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+      font-family: "Tajawal", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #121212;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 5rem;
+      text-align: center;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    #scanningText {
+      position: absolute;
+      top: 10%; /* Move text 50% from the top */
+      left: 50%; /* Move text 50% from the left */
+      transform: translate(-50%, -50%); /* Center the text perfectly */
+      font-size: 2rem;
+      color: #00df9a;
+      animation: scanEffect 1.5s infinite;
+      text-align: center; /* Works if text is multi-line */
+    }
+
+    @keyframes scanEffect {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>الرجاء النظر الى الكاميرا</h1>
+  <div id="scanningText">🔍 يتم التعرف على الوجه</div>
+  <video id="video" autoplay muted width="720" height="560" style="position: relative;"></video>
+  <script defer src="/js/face-api.min.js"></script>
+  <script defer src="/js/faceID.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+body {
+  background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+  font-family: "Tajawal", sans-serif;
+}
+
+.search-input {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  outline: none;
+  width: 300px;
+  font-size: 1rem;
+  color: #333;
+}
+

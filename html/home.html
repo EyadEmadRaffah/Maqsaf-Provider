@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مقصف</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body class="h-screen flex flex-col items-center justify-between">
+    <!-- Top Bar Section -->
+    <div
+      class="w-11/12 max-w-5xl mx-auto bg-[#0a4b56] rounded-3xl mt-6 p-4 flex justify-around items-center text-white floating-bar"
+    >
+      <!-- Home -->
+      <a href="/html/home.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-home text-2xl mb-1"></i>
+        <span class="text-sm">الصفحة الرئيسية</span>
+      </a>
+
+      <!-- Create Order -->
+      <a href="/html/newOrder.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-cart-plus text-2xl mb-1"></i>
+        <span class="text-sm">إنشاء طلب</span>
+      </a>
+
+      <!-- Menu -->
+      <a href="/html/menu.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-list text-2xl mb-1"></i>
+        <span class="text-sm">قائمة الطعام</span>
+      </a>
+
+      <!-- Monitor Data -->
+      <a href="/html/income.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-database text-2xl mb-1"></i>
+        <span class="text-sm">مراقبة البيانات</span>
+      </a>
+
+      <!-- Inventory -->
+      <a href="/html/storeageOP.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-archive text-2xl mb-1"></i>
+        <span class="text-sm">المخزون</span>
+      </a>
+    </div>
+
+    <!-- User Profile Container -->
+    <div
+      class="absolute top-6 right-6 bg-[#1a3f4e] rounded-xl worker-container flex items-center gap-4 text-white"
+    >
+      <div class="text-right">
+        <p class="font-bold text-lg">عبدالله الزميلي</p>
+        <p class="text-sm text-gray-300">المسمى الوظيفي: كاشير</p>
+        <p class="text-sm text-gray-300">رقم الموظف: 1</p>
+      </div>
+      <img
+        src="/src/worker.png"
+        alt="User Avatar"
+        class="w-16 h-16 rounded-full"
+      />
+    </div>
+
+    <!-- Logo -->
+    <div class="mt-12">
+      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-48" />
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8 mb-4">
+      <a
+        href="/html/menu.html"
+        class="button-card bg-white text-black rounded-lg p-6 text-center flex flex-col items-center gap-4 hover:shadow-lg"
+      >
+        <i class="fa fa-list text-5xl"></i>
+        <span class="font-bold text-lg">قائمة الطعام</span>
+      </a>
+      <a
+        href="/html/STinfoNOpre.html"
+        class="button-card bg-white text-black rounded-lg p-6 text-center flex flex-col items-center gap-4 hover:shadow-lg"
+      >
+        <i class="fa fa-graduation-cap text-5xl"></i>
+        <span class="font-bold text-lg">عرض ملف الطالب</span>
+      </a>
+      <a
+        href="/html/storeageOP.html"
+        class="button-card bg-white text-black rounded-lg p-6 text-center flex flex-col items-center gap-4 hover:shadow-lg"
+      >
+        <i class="fa fa-archive text-5xl"></i>
+        <span class="font-bold text-lg">إدارة المخزون</span>
+      </a>
+      <a
+        href="/html/income.html"
+        class="button-card bg-white text-black rounded-lg p-6 text-center flex flex-col items-center gap-4 hover:shadow-lg"
+      >
+        <i class="fa fa-database text-5xl"></i>
+        <span class="font-bold text-lg">مراقبة البيانات</span>
+      </a>
+    </div>
+
+    <!-- Create Order Button -->
+    <div class="mb-8">
+      <a
+        href="/html/newOrder.html"
+        class="bg-[#0a4b56] text-white px-8 py-3 rounded-lg text-lg flex items-center gap-2 hover:bg-[#083a43]"
+      >
+        <i class="fa fa-cart-plus"></i>
+        <span>إنشاء طلب</span>
+      </a>
+    </div>
+  </body>
+</html>

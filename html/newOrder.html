@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إنشاء طلب جديد</title>
+    
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/newOrder.css" />
+    <link rel="stylesheet" href="/css/global.css">
+    
+  </head>
+  <body class="flex flex-col items-center justify-center min-h-screen">
+
+        <!-- Logo -->
+        <div class="logo">
+          <img src="/src/logo.png" alt="Logo">
+      </div>
+
+    <!-- Page Title -->
+    <h1 class="text-3xl font-bold text-white mb-8">إنشاء طلب جديد</h1>
+
+    <!-- Search Section -->
+    <div class="bg-[#0a4b56] p-4 rounded-xl mb-6 shadow-lg w-fit">
+      <p class="text-white text-lg">ادخل اسم الطالب او رقمه</p>
+    </div>
+
+    <!-- Input Section -->
+    <div class="flex items-center gap-2 mb-4">
+      <!-- Search Input -->
+      <input
+        type="text"
+        id="studentID"
+        placeholder="الرجاء إدخال رقم الطالب أو اسمه"
+        class="search-input shadow-md"
+        maxlength="8"
+      />
+
+      <!-- Search Button -->
+      <button
+        onclick="validateID()"
+        class="bg-green-500 hover:bg-green-600 text-white p-3 rounded-lg shadow-lg"
+      >
+        <i class="fa fa-search text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Error Message -->
+    <p id="error-message" class="text-red-500 text-lg mb-4 hidden">
+      الرجاء إدخال رقم مكون من 8 أرقام.
+    </p>
+
+    <!-- Or Divider -->
+    <p class="text-white text-lg mb-4">أو</p>
+
+    <!-- Face Recognition Button -->
+    <a href="faceID.html">
+      <button
+        class="bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg text-lg shadow-lg flex items-center gap-2"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Face_ID_logo.svg/2048px-Face_ID_logo.svg.png"
+          alt="Face ID Logo"
+          class="w-8 h-8"
+        />
+        <span>بصمة الوجه</span>
+      </button>
+    </a>
+
+    <!-- Back Button -->
+    <div class="absolute bottom-8 left-8">
+      <button
+        onclick="window.history.back()"
+        class="bg-[#0a4b56] hover:bg-[#083a43] text-white py-2 px-4 rounded-lg flex items-center gap-2 shadow-lg"
+      >
+        <span>الرجوع الى الخلف</span>
+        <i class="fa fa-arrow-left"></i>
+      </button>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      function validateID() {
+        const inputField = document.getElementById("studentID");
+        const errorMessage = document.getElementById("error-message");
+        const idValue = inputField.value.trim();
+
+        if (/^\d{8}$/.test(idValue)) {
+          // If the input matches exactly 8 digits, redirect to the correct page
+          window.location.href = "/html/STinfoNOpre.html";
+        } else {
+          // Show error message if invalid
+          errorMessage.classList.remove("hidden");
+        }
+      }
+    </script>
+  </body>
+</html>

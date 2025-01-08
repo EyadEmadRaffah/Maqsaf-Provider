@@ -1,0 +1,20 @@
+body {
+  background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+  color: #ffffff;
+  font-family: "Tajawal", sans-serif;
+}
+
+.floating-bar {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.button-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 220px; /* Wider buttons */
+  height: 150px; /* Taller buttons */
+}
+
+.worker-container {
+  min-width: 280px; /* Fix width */
+  padding: 12px 20px; /* Add space */
+}
