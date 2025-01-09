@@ -131,6 +131,15 @@
     .back-button:hover {
       background-color: #0a4b56;
     }
+
+    .upload-button {
+      background-color: #eab308;
+      color: white;
+    }
+
+    .upload-button:hover {
+      background-color: #ca8a04;
+    }
   </style>
 </head>
 <body>
@@ -170,6 +179,7 @@
     <!-- Action Buttons -->
     <div class="action-buttons">
       <button class="action-button" onclick="payFromBalance()">رصيد المحفظة</button>
+      <button class="action-button upload-button" onclick="uploadCash()">دفع كاش</button>
       <button class="action-button back-button" onclick="window.history.back()">الرجوع الى القائمة</button>
     </div>
   </div>
@@ -179,6 +189,11 @@
       alert('تم الدفع بنجاح باستخدام رصيد المحفظة!');
       // Redirect to confirmation page
       window.location.href = "confirmation.html";
+    }
+
+    function uploadCash() {
+      alert('تم دفع الكاش بنجاح!');
+      // Add your logic for cash upload here
     }
   </script>
 </body>

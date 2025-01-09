@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مقصف</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+   body {
+      background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+      color: #ffffff;
+      font-family: "Tajawal", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .header {
+      background-color: #15445A;
+      border-radius: 12px;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header img {
+      width: 120px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    .nav button {
+      background: none;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .nav button:hover {
+      background: #005F73;
+    }
+
+    .search {
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search input {
+      flex-grow: 1;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 50px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .search button {
+      background: #007EA7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .tags span {
+      background: #ffffff;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .tags span button {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .food-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .food-item {
+      background: #ffffff;
+      border-radius: 12px;
+      text-align: center;
+      padding: 20px;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .food-item img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .food-item button {
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    .food-item button:hover {
+      background: #cc0000;
+    }
+
+    .back-button {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 30px;
+    }
+
+    .back-button button {
+      background: #ffffff;
+      color: #007EA7;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .back-button button:hover {
+      background: #005F73;
+      color: #ffffff;
+    }
+
+    .section-title {
+      background-color: #15445A;
+      border-radius: 12px;
+      padding: 10px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .deleted-title {
+      background-color: #15445A;
+      border-radius: 12px;
+      padding: 10px 20px;
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <div class="header">
+      
+      <div class="nav">
+        <button>الصفحة الرئيسية</button>
+        <button>إنشاء طلب</button>
+        <button>قائمة الطعام</button>
+        <button>مراقبة البيانات</button>
+        <button>المخزون</button>
+      </div>
+    </div>
+
+    <div class="search">
+      <input type="text" placeholder="بحث عن أصناف">
+      <button>بحث</button>
+    </div>
+
+    <div class="deleted-title">المحذوفات</div>
+
+    <div class="tags">
+      <span>الفول السوداني <button>&times;</button></span>
+      <span>اللبن <button>&times;</button></span>
+      <span>الغلوتين <button>&times;</button></span>
+    </div>
+
+    <div class="section-title">قائمة الطعام الحالية بعد الحذف:</div>
+
+    <div class="food-list">
+      <div class="food-item">
+        <img src="peanut.png" alt="الفول السوداني">
+        <p>الفول السوداني</p>
+        <button>منع</button>
+      </div>
+      <div class="food-item">
+        <img src="milk.png" alt="اللبن">
+        <p>اللبن</p>
+        <button>منع</button>
+      </div>
+      <div class="food-item">
+        <img src="egg.png" alt="البيض">
+        <p>البيض</p>
+        <button>منع</button>
+      </div>
+      <div class="food-item">
+        <img src="gluten.png" alt="الغلوتين">
+        <p>الغلوتين</p>
+        <button>منع</button>
+      </div>
+      <div class="food-item">
+        <img src="fish.png" alt="السمك">
+        <p>السمك</p>
+        <button>منع</button>
+      </div>
+    </div>
+
+    <div class="back-button">
+      <button>الرجوع إلى الخلف</button>
+    </div>
+  </div>
+</body>
+</html>
