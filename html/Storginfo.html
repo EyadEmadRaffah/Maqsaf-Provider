@@ -49,13 +49,29 @@
             width: 16px;
             height: 16px;
         }
+
+        .add-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .add-button button {
+            padding: 10px 20px;
+            background-color: #0a4b56;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-button button:hover {
+            background-color: #064d57;
+        }
     </style>
 </head>
 
 <body>
-
     <div class="container">
-
         <!-- Logo -->
         <div class="logo">
             <img src="/src/logo.png" alt="Logo">
@@ -63,7 +79,12 @@
 
         <!-- Page Title -->
         <div class="table-title">
-            <h2> المنتجات</h2>
+            <h2>المنتجات</h2>
+        </div>
+
+        <!-- Add Product Button -->
+        <div class="add-button">
+            <button onclick="addProduct()">إضافة صنف جديد</button>
         </div>
 
         <!-- Table: Income Tracking -->
@@ -97,48 +118,13 @@
                             </button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>0002</td>
-                        <td>ساندوتش جبنة</td>
-                        <td>2</td>
-                        <td>400</td>
-                        <td>ريال 800</td>
-                        <td>
-                            <button class="edit-button" onclick="editProduct(this)">
-                                تعديل
-                                <img src="/src/edit-icon.png" alt="Edit Icon">
-                            </button>
-                            <button class="delete-button" onclick="deleteProduct(this)">
-                                حذف
-                                <img src="/src/delete-icon.png" alt="Delete Icon">
-                            </button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>0003</td>
-                        <td>سلطة</td>
-                        <td>5</td>
-                        <td>250</td>
-                        <td>ريال 1250</td>
-                        <td>
-                            <button class="edit-button" onclick="editProduct(this)">
-                                تعديل
-                                <img src="/src/edit-icon.png" alt="Edit Icon">
-                            </button>
-                            <button class="delete-button" onclick="deleteProduct(this)">
-                                حذف
-                                <img src="/src/delete-icon.png" alt="Delete Icon">
-                            </button>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
         </div>
 
-      
         <!-- Back Button -->
         <div class="back-button">
-            <button onclick="goBack()">← الرجوع إلى الخلف</button>
+            <button onclick="goBack()">الرجوع إلى الخلف</button>
         </div>
 
         <script>
@@ -146,42 +132,77 @@
                 window.history.back();
             }
 
-            function editProduct(button) {
-                const row = button.parentElement.parentElement;
-                const nameCell = row.children[1];
-                const quantityCell = row.children[3];
+            function addProduct() {
+                const productId = prompt("أدخل رقم الصنف:");
+                const productName = prompt("أدخل اسم الصنف:");
+                const productPrice = prompt("أدخل سعر الصنف:");
+                const productQuantity = prompt("أدخل عدد الصنف:");
 
-                const newName = prompt("أدخل اسم المنتج :", nameCell.textContent);
-                const newQuantity = prompt("أدخل عدد المنتج:", quantityCell.textContent);
+                if (productId && productName && productPrice && productQuantity && !isNaN(productPrice) && !isNaN(productQuantity)) {
+                    const price = parseFloat(productPrice);
+                    const quantity = parseInt(productQuantity, 10);
+                    const totalPrice = price * quantity;
 
-                if (newName !== null) {
-                    nameCell.textContent = newName;
+                    const table = document.getElementById("income-table").querySelector("tbody");
+                    const newRow = document.createElement("tr");
+
+                    newRow.innerHTML = `
+                        <td>${productId}</td>
+                        <td>${productName}</td>
+                        <td>${price.toFixed(2)}</td>
+                        <td>${quantity}</td>
+                        <td>ريال ${totalPrice.toFixed(2)}</td>
+                        <td>
+                            <button class="edit-button" onclick="editProduct(this)">
+                                تعديل
+                                <img src="/src/edit-icon.png" alt="Edit Icon">
+                            </button>
+                            <button class="delete-button" onclick="deleteProduct(this)">
+                                حذف
+                                <img src="/src/delete-icon.png" alt="Delete Icon">
+                            </button>
+                        </td>
+                    `;
+
+                    table.appendChild(newRow);
+                } else {
+                    alert("الرجاء إدخال بيانات صحيحة لجميع الحقول.");
                 }
+            }
 
-                if (newQuantity !== null && !isNaN(newQuantity)) {
-                    quantityCell.textContent = newQuantity;
+            function editProduct(button) {
+                const row = button.closest("tr");
+                const cells = row.cells;
 
-                    const priceCell = row.children[2];
-                    const totalCell = row.children[4];
+                const newProductId = prompt("تعديل رقم الصنف:", cells[0].textContent);
+                const newProductName = prompt("تعديل اسم الصنف:", cells[1].textContent);
+                const newProductPrice = prompt("تعديل سعر الصنف:", cells[2].textContent);
+                const newProductQuantity = prompt("تعديل عدد الصنف:", cells[3].textContent);
 
-                    const price = parseFloat(priceCell.textContent);
-                    const total = price * parseInt(newQuantity, 10);
+                if (newProductId && newProductName && newProductPrice && newProductQuantity && 
+                    !isNaN(newProductPrice) && !isNaN(newProductQuantity)) {
+                    const price = parseFloat(newProductPrice);
+                    const quantity = parseInt(newProductQuantity, 10);
+                    const totalPrice = price * quantity;
 
-                    totalCell.textContent = `ريال ${total}`;
+                    cells[0].textContent = newProductId;
+                    cells[1].textContent = newProductName;
+                    cells[2].textContent = price.toFixed(2);
+                    cells[3].textContent = quantity;
+                    cells[4].textContent = `ريال ${totalPrice.toFixed(2)}`;
+                } else {
+                    alert("الرجاء إدخال بيانات صحيحة.");
                 }
             }
 
             function deleteProduct(button) {
-                const row = button.parentElement.parentElement;
+                const row = button.closest("tr");
                 const confirmation = confirm("هل أنت متأكد أنك تريد حذف هذا المنتج؟");
                 if (confirmation) {
                     row.remove();
                 }
             }
-
-           
         </script>
-
     </div>
 
     <script src="/js/income.js"></script>

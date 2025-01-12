@@ -1,67 +1,287 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-  <head>
-    <link rel="icon" type="image/png" href="/src/favicon.ico" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Top Bar Only</title>
+<head>
+    <link rel="icon" type="image/png" sizes="16x16" href="/src/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/src/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/src/android-chrome-512x512.png">
+    <link rel="icon" type="image/x-icon" href="/src/favicon.ico">
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مقصف</title>
+    <link rel="stylesheet" href="/css/income.css">
+    <link rel="stylesheet" href="/css/global.css">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    
     <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    
     <!-- Google Font: Tajawal -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+    
     <style>
-      body {
-        background-color: #f0f4f8; /* Same background color as the original */
-        font-family: "Tajawal", sans-serif;
-      }
+        body {
+            background-color: #f0f4f8;
+            font-family: "Tajawal", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.5rem;
+        }
+
+        .top-bar-content {
+            background-color: #0a4b56;
+            border-radius: 1.5rem;
+            margin: 0 auto;
+            width: 91.666667%;
+            max-width: 64rem;
+        }
+
+        .main-content {
+            margin-top: 6rem;
+        }
+
+        .edit-button {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .edit-button img {
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .delete-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .delete-button img {
+            margin-left: 5px;
+            width: 16px;
+            height: 16px;
+        }
+
+        .add-button {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .add-button button {
+            padding: 10px 20px;
+            background-color: #0a4b56;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .add-button button:hover {
+            background-color: #064d57;
+        }
     </style>
-  </head>
-  <body class="h-screen flex items-center justify-center">
+</head>
+
+<body>
     <!-- Top Bar Section -->
-    <div
-      class="w-11/12 max-w-5xl mx-auto bg-[#0a4b56] rounded-3xl p-4 flex justify-around items-center text-white"
-    >
-      <!-- Home -->
-      <a href="/html/home.html" class="flex flex-col items-center hover:text-gray-300">
-        <i class="fa fa-home text-2xl mb-1"></i>
-        <span class="text-sm">الصفحة الرئيسية</span>
-      </a>
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="p-4 flex justify-around items-center text-white">
+                <!-- Home -->
+                <a href="/html/home.html" class="flex flex-col items-center hover:text-gray-300">
+                    <i class="fa fa-home text-2xl mb-1"></i>
+                    <span class="text-sm">الصفحة الرئيسية</span>
+                </a>
 
-      <!-- Create Order -->
-      <a href="/html/newOrder.html" class="flex flex-col items-center hover:text-gray-300">
-        <i class="fa fa-cart-plus text-2xl mb-1"></i>
-        <span class="text-sm">إنشاء طلب</span>
-      </a>
+                <!-- Create Order -->
+                <a href="/html/newOrder.html" class="flex flex-col items-center hover:text-gray-300">
+                    <i class="fa fa-cart-plus text-2xl mb-1"></i>
+                    <span class="text-sm">إنشاء طلب</span>
+                </a>
 
-      <!-- Menu -->
-      <a href="/html/menu.html" class="flex flex-col items-center hover:text-gray-300">
-        <i class="fa fa-list text-2xl mb-1"></i>
-        <span class="text-sm">قائمة الطعام</span>
-      </a>
+                <!-- Menu -->
+                <a href="/html/menu.html" class="flex flex-col items-center hover:text-gray-300">
+                    <i class="fa fa-list text-2xl mb-1"></i>
+                    <span class="text-sm">قائمة الطعام</span>
+                </a>
 
-      <!-- Monitor Data -->
-      <a href="/html/income.html" class="flex flex-col items-center hover:text-gray-300">
-        <i class="fa fa-database text-2xl mb-1"></i>
-        <span class="text-sm">مراقبة البيانات</span>
-      </a>
+                <!-- Monitor Data -->
+                <a href="/html/income.html" class="flex flex-col items-center hover:text-gray-300">
+                    <i class="fa fa-database text-2xl mb-1"></i>
+                    <span class="text-sm">مراقبة البيانات</span>
+                </a>
 
-      <!-- Inventory -->
-      <a href="/html/storeageOP.html" class="flex flex-col items-center hover:text-gray-300">
-        <i class="fa fa-archive text-2xl mb-1"></i>
-        <span class="text-sm">المخزون</span>
-      </a>
+                <!-- Inventory -->
+                <a href="/html/storeageOP.html" class="flex flex-col items-center hover:text-gray-300">
+                    <i class="fa fa-archive text-2xl mb-1"></i>
+                    <span class="text-sm">المخزون</span>
+                </a>
+            </div>
+        </div>
     </div>
-  </body>
+
+    <div class="main-content">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <img src="/src/logo.png" alt="Logo">
+            </div>
+
+            <!-- Page Title -->
+            <div class="table-title">
+                <h2>المنتجات</h2>
+            </div>
+
+            <!-- Add Product Button -->
+            <div class="add-button">
+                <button onclick="addProduct()">إضافة صنف جديد</button>
+            </div>
+
+            <!-- Table: Income Tracking -->
+            <div class="table-container">
+                <table id="income-table">
+                    <thead>
+                        <tr>
+                            <th>رقم الصنف</th>
+                            <th>اسم الصنف</th>
+                            <th>سعر الصنف</th>
+                            <th>عدد المبيعات</th>
+                            <th>السعر الإجمالي</th>
+                            <th>الإجراءات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0001</td>
+                            <td>ساندوتش تونة</td>
+                            <td>3</td>
+                            <td>300</td>
+                            <td>ريال 900</td>
+                            <td>
+                                <button class="edit-button" onclick="editProduct(this)">
+                                    تعديل
+                                    <img src="/src/edit-icon.png" alt="Edit Icon">
+                                </button>
+                                <button class="delete-button" onclick="deleteProduct(this)">
+                                    حذف
+                                    <img src="/src/delete-icon.png" alt="Delete Icon">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Back Button -->
+            <div class="back-button">
+                <button onclick="goBack()">الرجوع إلى الخلف</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function addProduct() {
+            const productId = prompt("أدخل رقم الصنف:");
+            const productName = prompt("أدخل اسم الصنف:");
+            const productPrice = prompt("أدخل سعر الصنف:");
+            const productQuantity = prompt("أدخل عدد الصنف:");
+
+            if (productId && productName && productPrice && productQuantity && !isNaN(productPrice) && !isNaN(productQuantity)) {
+                const price = parseFloat(productPrice);
+                const quantity = parseInt(productQuantity, 10);
+                const totalPrice = price * quantity;
+
+                const table = document.getElementById("income-table").querySelector("tbody");
+                const newRow = document.createElement("tr");
+
+                newRow.innerHTML = `
+                    <td>${productId}</td>
+                    <td>${productName}</td>
+                    <td>${price.toFixed(2)}</td>
+                    <td>${quantity}</td>
+                    <td>ريال ${totalPrice.toFixed(2)}</td>
+                    <td>
+                        <button class="edit-button" onclick="editProduct(this)">
+                            تعديل
+                            <img src="/src/edit-icon.png" alt="Edit Icon">
+                        </button>
+                        <button class="delete-button" onclick="deleteProduct(this)">
+                            حذف
+                            <img src="/src/delete-icon.png" alt="Delete Icon">
+                        </button>
+                    </td>
+                `;
+
+                table.appendChild(newRow);
+            } else {
+                alert("الرجاء إدخال بيانات صحيحة لجميع الحقول.");
+            }
+        }
+
+        function editProduct(button) {
+            const row = button.closest("tr");
+            const cells = row.cells;
+
+            const newProductId = prompt("تعديل رقم الصنف:", cells[0].textContent);
+            const newProductName = prompt("تعديل اسم الصنف:", cells[1].textContent);
+            const newProductPrice = prompt("تعديل سعر الصنف:", cells[2].textContent);
+            const newProductQuantity = prompt("تعديل عدد الصنف:", cells[3].textContent);
+
+            if (newProductId && newProductName && newProductPrice && newProductQuantity && 
+                !isNaN(newProductPrice) && !isNaN(newProductQuantity)) {
+                const price = parseFloat(newProductPrice);
+                const quantity = parseInt(newProductQuantity, 10);
+                const totalPrice = price * quantity;
+
+                cells[0].textContent = newProductId;
+                cells[1].textContent = newProductName;
+                cells[2].textContent = price.toFixed(2);
+                cells[3].textContent = quantity;
+                cells[4].textContent = `ريال ${totalPrice.toFixed(2)}`;
+            } else {
+                alert("الرجاء إدخال بيانات صحيحة.");
+            }
+        }
+
+        function deleteProduct(button) {
+            const row = button.closest("tr");
+            const confirmation = confirm("هل أنت متأكد أنك تريد حذف هذا المنتج؟");
+            if (confirmation) {
+                row.remove();
+            }
+        }
+    </script>
+
+    <script src="/js/income.js"></script>
+</body>
 </html>
