@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>طريقة الدفع</title>
+  <title>مراجعة الطلب والدفع</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -19,126 +19,136 @@
       margin: 0;
       padding: 0;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
       background-color: #1a3f4e;
-      border-radius: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
       padding: 24px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      width: 90%;
-      max-width: 600px;
     }
 
     .header {
+      border-bottom: 2px solid #0a4b56;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
       text-align: center;
-      margin-bottom: 24px;
     }
 
     .header h1 {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
+      color: #ffffff;
     }
 
-    .student-info {
-      background-color: #0a4b56;
-      border-radius: 12px;
-      padding: 16px;
+    .user-info {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
+      background-color: #0a4b56;
+      border-radius: px;
+      padding: 16px;
+      margin-bottom: 20px;
     }
 
-    .student-info img {
-      width: 64px;
-      height: 64px;
+    .user-info img {
+      width: 50px;
+      height: 50px;
       border-radius: 50%;
+      margin-right: 16px;
     }
 
-    .student-details {
-      text-align: right;
+    .user-info .details {
+      font-size: 0.9rem;
     }
 
-    .student-details p {
+    .user-info .details p {
       margin: 4px 0;
     }
 
-    .table {
-      background-color: #083a43;
-      border-radius: 12px;
-      padding: 16px;
+    .order-summary {
       margin-bottom: 24px;
     }
 
-    .table-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 12px;
+    .order-summary h2 {
+      font-size: 1.25rem;
       font-weight: bold;
+      margin-bottom: 16px;
+      color: #ffffff;
     }
 
-    .table-row {
+    .order-item {
       display: flex;
       justify-content: space-between;
-      padding: 8px 0;
+      align-items: center;
+      padding: 12px 0;
       border-bottom: 1px solid #0a4b56;
     }
 
-    .table-row:last-child {
+    .order-item:last-child {
       border-bottom: none;
     }
 
-    .total-row {
-      text-align: center;
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-top: 16px;
+    .order-item span {
+      font-size: 1rem;
+      color: #d1d5db;
     }
 
-    .action-buttons {
+    .total {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 16px;
+      color: #ffffff;
     }
 
-    .action-button {
+    .payment-methods {
+      margin-top: 24px;
+    }
+
+    .payment-methods h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .button {
       background-color: #0ea5e9;
       color: white;
       border: none;
       border-radius: 8px;
-      padding: 12px 16px;
-      font-size: 1rem;
+      padding: 10px;
+      font-size: 0.9rem;
       font-weight: bold;
-      width: 48%;
-      text-align: center;
       cursor: pointer;
+      text-align: center;
       transition: background-color 0.3s ease;
     }
 
-    .action-button:hover {
-      background-color: #059669;
+    .button:hover {
+      background-color: #0284c7;
     }
 
-    .back-button {
-      background-color: #083a43;
+    .button.secondary {
+      background-color: #6b7280;
     }
 
-    .back-button:hover {
-      background-color: #0a4b56;
-    }
-
-    .upload-button {
-      background-color: #eab308;
-      color: white;
-    }
-
-    .upload-button:hover {
-      background-color: #ca8a04;
+    .button.secondary:hover {
+      background-color: #4b5563;
     }
   </style>
 </head>
@@ -146,41 +156,44 @@
   <div class="container">
     <!-- Header -->
     <div class="header">
-      <h1>طريقة الدفع</h1>
+      <h1>مراجعة الطلب والدفع</h1>
     </div>
 
-    <!-- Student Info -->
-    <div class="student-info">
-      <img src="https://pbs.twimg.com/media/Fp9wmTrXoAE9wSr.jpg" alt="Student Avatar">
-      <div class="student-details">
+    <!-- User Info -->
+    <div class="user-info">
+      <img src="https://pbs.twimg.com/media/Fp9wmTrXoAE9wSr.jpg" alt="User Avatar">
+      <div class="details">
         <p><strong>محمد عبدالله الحربي</strong></p>
         <p>المتبقي من الحد اليومي: <span>9 ريال</span></p>
         <p>الرصيد الحالي: <span>55 ريال</span></p>
       </div>
     </div>
 
-    <!-- Order Details -->
-    <div class="table">
-      <div class="table-header">
-        <span>اسم الصنف</span>
-        <span>السعر</span>
-      </div>
-      <div class="table-row">
+    <!-- Order Summary -->
+    <div class="order-summary">
+      <h2>ملخص الطلب</h2>
+      <div class="order-item">
         <span>ساندوتش تونة</span>
         <span>3 ريال</span>
       </div>
-      <div class="table-row">
+      <div class="order-item">
         <span>سلطة خيار</span>
         <span>5 ريال</span>
       </div>
-      <div class="total-row">المجموع الكلي: <span>8 ريال</span></div>
+      <div class="total">
+        <span>الإجمالي:</span>
+        <span>8 ريال</span>
+      </div>
     </div>
 
-    <!-- Action Buttons -->
-    <div class="action-buttons">
-      <button class="action-button" onclick="payFromBalance()">رصيد المحفظة</button>
-      <button class="action-button upload-button" onclick="uploadCash()">دفع كاش</button>
-      <button class="action-button back-button" onclick="window.history.back()">الرجوع الى القائمة</button>
+    <!-- Payment Methods -->
+    <div class="payment-methods">
+      <h3>طرق الدفع</h3>
+      <div class="buttons">
+        <button class="button" onclick="payFromBalance()">رصيد المحفظة</button>
+        <button class="button" onclick="uploadCash()">الدفع نقداً</button>
+        <button class="button secondary" onclick="window.history.back()">الرجوع إلى القائمة</button>
+      </div>
     </div>
   </div>
 
