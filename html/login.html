@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تسجيل الدخول - مقصف</title>
+    <link rel="stylesheet" href="/css/global.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+        body {
+            background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+            color: #ffffff;
+            font-family: "Tajawal", sans-serif;
+        }
+
+        .login-card {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-btn {
+            background-color: #0a4b56;
+            transition: background-color 0.3s;
+        }
+
+        .login-btn:hover {
+            background-color: #083a43;
+        }
+    </style>
+</head>
+<body class="h-screen flex items-center justify-center">
+    <div class="login-card bg-white text-black rounded-lg p-8 w-96">
+        <div class="text-center mb-8">
+            <img src="/src/logo.png" alt="Maqsaf Logo" class="w-24 mx-auto mb-4" />
+            <h1 class="text-2xl font-bold">تسجيل الدخول</h1>
+        </div>
+
+                    <!-- Logo -->
+                    <div class="logo">
+                        <img src="/src/logo.png" alt="Logo">
+                    </div>
+
+        <form action="/html/home.html" method="GET">
+            <div class="mb-6">
+                <label for="username" class="block text-sm font-bold mb-2">اسم المستخدم</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a4b56]"
+                    placeholder="ادخل اسم المستخدم"
+                    required
+                />
+            </div>
+
+            <div class="mb-6">
+                <label for="password" class="block text-sm font-bold mb-2">كلمة المرور</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a4b56]"
+                    placeholder="ادخل كلمة المرور"
+                    required
+                />
+            </div>
+
+            <div class="text-center">
+                <button
+                    type="submit"
+                    class="login-btn text-white w-full py-3 rounded-lg font-bold text-lg"
+                >
+                    تسجيل الدخول
+                </button>
+            </div>
+        </form>
+
+        <div class="text-center mt-6">
+            <a href="/html/forgot.html" class="text-sm text-[#0a4b56] hover:underline">
+                نسيت كلمة المرور؟
+            </a>
+        </div>
+    </div>
+</body>
+</html>

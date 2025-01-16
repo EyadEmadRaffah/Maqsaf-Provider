@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مقصف - مرحبًا يا بطل</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Tajawal", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen flex flex-col items-center bg-cover bg-center"
+    style="background-image: url('/src/batman.png');"
+  >
+    <!-- Logo -->
+    <div class="absolute top-6 right-6">
+      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-40" />
+    </div>
+
+    <!-- Welcome Section -->
+    <div class="text-center text-white mt-24">
+      <h1 class="text-5xl font-bold mb-6">أهلاً يا بطل</h1>
+      <div class="flex flex-col items-center">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-[#1a3f4e]">
+          <img
+            src="/src/hero-image.jpg"
+            alt="Hero Image"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <p class="mt-4 font-bold text-2xl">البطل محمد عبدالله الحربي</p>
+      </div>
+    </div>
+
+    <!-- Points Section -->
+    <div class="text-center text-white mt-6">
+      <p class="text-xl font-bold mb-2">نقاطك الحالية:</p>
+      <div class="flex items-center justify-center text-3xl font-bold">
+        <img
+          src="/src/batmanlogo.png"
+          alt="Batman Icon"
+          class="w-10 h-10 ml-2"
+        />
+        <p>1200</p>
+        <!-- Progress Bar next to points -->
+        <div class="ml-4 w-40 h-3 bg-gray-300 rounded-full overflow-hidden">
+          <div
+            class="h-full bg-yellow-500"
+            style="width: 50%;"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Section -->
+    <div
+      class="bg-white text-black rounded-lg px-6 py-4 mt-8 text-center w-11/12 max-w-md shadow-lg"
+    >
+      <p class="font-bold text-lg">
+        تذكر أن الأبطال يحتاجون للطاقة، تأكد من تناول وجبة خفيفة صحية.
+      </p>
+    </div>
+
+    <!-- Footer Loading Section -->
+    <div class="mt-8 w-full flex flex-col items-center">
+      <p class="text-white mb-2 text-lg">جاري تجهيز وجبتك...</p>
+      <div class="w-48 h-4 bg-gray-300 rounded-full overflow-hidden shadow-md">
+        <div
+          class="h-full bg-yellow-500 flex items-center justify-center"
+          style="width: 75%;"
+        >
+          <img
+            src="/src/batmanlogo.png"
+            alt="Batman Icon"
+            class="w-6 h-6"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
