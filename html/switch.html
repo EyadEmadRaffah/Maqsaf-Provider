@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>اختيار الحساب</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="h-screen flex flex-col items-center justify-center"
+    style="background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);"
+  >
+    <!-- Logo -->
+    <div class="mb-12">
+      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-48" />
+    </div>
+
+    <!-- Accounts Box -->
+    <div
+      class="bg-white text-black rounded-3xl shadow-lg p-8 w-11/12 max-w-xl text-center"
+    >
+      <p class="text-2xl font-bold mb-6">الرجاء اختيار الحساب</p>
+      <div class="flex justify-around items-center">
+        <!-- User 1 -->
+        <div class="flex flex-col items-center">
+          <button
+            onclick="redirectToPassword('حسام')"
+            class="w-24 h-24 rounded-full bg-[#0a4b56] hover:bg-[#083a43] flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="/src/hossam.png"
+              alt="حسام"
+              class="w-full h-full object-cover"
+            />
+          </button>
+          <p class="mt-2 text-sm font-bold">حسام</p>
+        </div>
+
+        <!-- User 2 -->
+        <div class="flex flex-col items-center">
+          <button
+            onclick="redirectToPassword('أنس')"
+            class="w-24 h-24 rounded-full bg-[#0a4b56] hover:bg-[#083a43] flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="/src/anas.png"
+              alt="أنس"
+              class="w-full h-full object-cover"
+            />
+          </button>
+          <p class="mt-2 text-sm font-bold">أنس</p>
+        </div>
+
+        <!-- User 3 -->
+        <div class="flex flex-col items-center">
+          <button
+            onclick="redirectToPassword('إياد')"
+            class="w-24 h-24 rounded-full bg-[#0a4b56] hover:bg-[#083a43] flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="/src/eyad.png"
+              alt="إياد"
+              class="w-full h-full object-cover"
+            />
+          </button>
+          <p class="mt-2 text-sm font-bold">إياد</p>
+        </div>
+
+        <!-- User 4 -->
+        <div class="flex flex-col items-center">
+          <button
+            onclick="redirectToPassword('أحمد')"
+            class="w-24 h-24 rounded-full bg-[#0a4b56] hover:bg-[#083a43] flex items-center justify-center overflow-hidden"
+          >
+            <img
+              src="/src/ahmed.png"
+              alt="أحمد"
+              class="w-full h-full object-cover"
+            />
+          </button>
+          <p class="mt-2 text-sm font-bold">أحمد</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function redirectToPassword(user) {
+        // Store the user selection and navigate to the password page
+        sessionStorage.setItem("selectedUser", user);
+        window.location.href = "/html/userlog.html";
+      }
+    </script>
+  </body>
+</html>

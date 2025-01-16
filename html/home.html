@@ -60,21 +60,41 @@
       </a>
     </div>
 
-    <!-- User Profile Container -->
-    <div
-      class="absolute top-6 right-6 bg-[#1a3f4e] rounded-xl worker-container flex items-center gap-4 text-white"
+<!-- User Profile Container -->
+<div
+  id="userProfile"
+  class="absolute top-6 right-6 bg-[#1a3f4e] rounded-xl worker-container flex items-center gap-4 text-white cursor-pointer relative"
+>
+  <div class="text-right">
+    <p class="font-bold text-lg">عبدالله الزميلي</p>
+    <p class="text-sm text-gray-300">المسمى الوظيفي: كاشير</p>
+    <p class="text-sm text-gray-300">رقم الموظف: 1</p>
+  </div>
+  <img
+    src="/src/worker.png"
+    alt="User Avatar"
+    class="w-16 h-16 rounded-full"
+  />
+  <!-- Dropdown Menu -->
+  <div
+    id="dropdownMenu"
+    class="absolute top-full right-0 bg-white text-black rounded-lg shadow-lg p-4 hidden"
+  >
+    <button
+      onclick="confirmLogout()"
+      class="block w-full text-right px-4 py-2 hover:bg-gray-200 rounded-lg"
     >
-      <div class="text-right">
-        <p class="font-bold text-lg">عبدالله الزميلي</p>
-        <p class="text-sm text-gray-300">المسمى الوظيفي: كاشير</p>
-        <p class="text-sm text-gray-300">رقم الموظف: 1</p>
-      </div>
-      <img
-        src="/src/worker.png"
-        alt="User Avatar"
-        class="w-16 h-16 rounded-full"
-      />
-    </div>
+      تسجيل الخروج
+    </button>
+    <button
+      onclick="switchUser()"
+      class="block w-full text-right px-4 py-2 hover:bg-gray-200 rounded-lg"
+    >
+      تغيير المستخدم
+    </button>
+  </div>
+</div>
+
 
     <!-- Logo -->
     <div class="mt-12">
@@ -124,6 +144,36 @@
       </a>
     </div>
     
-    
   </body>
+
+
+  <script>
+    const userProfile = document.getElementById("userProfile");
+    const dropdownMenu = document.getElementById("dropdownMenu");
+  
+    // Toggle dropdown menu
+    userProfile.addEventListener("click", () => {
+      dropdownMenu.classList.toggle("hidden");
+    });
+  
+    // Confirm logout
+    function confirmLogout() {
+      if (confirm("هل أنت متأكد أنك تريد تسجيل الخروج؟")) {
+        window.location.href = "/html/login.html";
+      }
+    }
+  
+    // Switch user
+    function switchUser() {
+      window.location.href = "/html/switch.html";
+    }
+  
+    // Close dropdown when clicking outside
+    window.addEventListener("click", (e) => {
+      if (!userProfile.contains(e.target)) {
+        dropdownMenu.classList.add("hidden");
+      }
+    });
+  </script>
+  
 </html>

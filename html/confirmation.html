@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تم الشراء</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/home.css" />
+
+    <script>
+      // Redirect to /html/home.html after 4 seconds
+      setTimeout(() => {
+        window.location.href = "/html/home.html";
+      }, 4000);
+    </script>
+  </head>
+  <body class="h-screen flex flex-col items-center justify-center" style="background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);">
+    <!-- Logo -->
+    <div class="mt-12">
+      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-60" />
+    </div>
+
+    <!-- Success Box -->
+    <div
+      class="bg-white text-black rounded-3xl shadow-lg p-8 w-11/12 max-w-lg text-center mt-12"
+    >
+      <div
+        class="w-24 h-24 rounded-full bg-[#0a4b56] flex items-center justify-center mx-auto mb-6"
+      >
+        <i class="fa fa-check text-white text-4xl"></i>
+      </div>
+      <p class="text-2xl font-bold mb-6">تم الشراء</p>
+      <button
+        class="bg-[#0a4b56] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#074d47] transition-transform transform hover:scale-105"
+      >
+        بالعافية عليكم
+      </button>
+    </div>
+  </body>
+</html>

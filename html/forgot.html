@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>نسيت كلمة المرور - مقصف</title>
-    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/logologin.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -42,17 +42,17 @@
         }
     </style>
 </head>
-<body class="h-screen flex items-center justify-center">
-    <div class="forgot-card bg-white text-black rounded-lg p-8 w-96">
-        <div class="text-center mb-8">
-            <img src="/src/logo.png" alt="Maqsaf Logo" class="w-24 mx-auto mb-4" />
+<body class="h-screen flex flex-col items-center justify-center">
+    <!-- Logo -->
+    <div class="logo">
+        <img src="/src/logo.png" alt="Logo" class="mx-auto" />
+    </div>
+
+    <!-- Forgot Password Card -->
+    <div class="forgot-card bg-white text-black rounded-lg p-8 w-96 mt-4">
+        <div class="text-center mb-8">  
             <h1 class="text-2xl font-bold">استعادة كلمة المرور</h1>
         </div>
-
-                            <!-- Logo -->
-                            <div class="logo">
-                                <img src="/src/logo.png" alt="Logo">
-                            </div>
 
         <form id="forgotPasswordForm">
             <div class="mb-6">
@@ -99,4 +99,5 @@
         });
     </script>
 </body>
+
 </html>

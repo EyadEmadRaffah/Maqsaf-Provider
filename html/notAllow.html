@@ -1,257 +1,168 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>مقصف</title>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-   body {
-      background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
-      color: #ffffff;
-      font-family: "Tajawal", sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
+  <head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مقصف - قائمة الطعام المحذوفة</title>
 
-    .container {
-      width: 95%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 20px;
-    }
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    .header {
-      background-color: #15445A;
-      border-radius: 12px;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
-    .header img {
-      width: 120px;
-    }
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    .nav {
-      display: flex;
-      gap: 15px;
-    }
+    <style>
+      body {
+        background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);
+        color: #ffffff;
+        font-family: "Tajawal", sans-serif;
+      }
 
-    .nav button {
-      background: none;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      font-weight: bold;
-    }
+      .floating-bar {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
 
-    .nav button:hover {
-      background: #005F73;
-    }
+      .button-card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        width: 220px; /* Wider buttons */
+        height: 150px; /* Taller buttons */
+      }
 
-    .search {
-      margin: 20px 0;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      .worker-container {
+        min-width: 280px; /* Fix width */
+        padding: 12px 20px; /* Add space */
+      }
+    </style>
+  </head>
+  <body class="h-screen flex flex-col items-center justify-between">
+    <!-- Top Bar Section -->
+    <div
+      class="w-11/12 max-w-5xl mx-auto bg-[#0a4b56] rounded-3xl mt-6 p-4 flex justify-around items-center text-white floating-bar"
+    >
+      <!-- Home -->
+      <a href="/html/home.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-home text-2xl mb-1"></i>
+        <span class="text-sm">الصفحة الرئيسية</span>
+      </a>
 
-    .search input {
-      flex-grow: 1;
-      padding: 15px;
-      border: 1px solid #ccc;
-      border-radius: 50px;
-      font-size: 1rem;
-      text-align: center;
-    }
+      <!-- Create Order -->
+      <a href="/html/newOrder.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-cart-plus text-2xl mb-1"></i>
+        <span class="text-sm">إنشاء طلب</span>
+      </a>
 
-    .search button {
-      background: #007EA7;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 50px;
-      font-size: 1rem;
-      font-weight: bold;
-    }
+      <!-- Menu -->
+      <a href="/html/menu.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-list text-2xl mb-1"></i>
+        <span class="text-sm">قائمة الطعام</span>
+      </a>
 
-    .tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
+      <!-- Monitor Data -->
+      <a href="/html/income.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-database text-2xl mb-1"></i>
+        <span class="text-sm">مراقبة البيانات</span>
+      </a>
 
-    .tags span {
-      background: #ffffff;
-      color: #000;
-      padding: 10px 15px;
-      border-radius: 25px;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .tags span button {
-      background: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 5px;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    .food-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 20px;
-    }
-
-    .food-item {
-      background: #ffffff;
-      border-radius: 12px;
-      text-align: center;
-      padding: 20px;
-      font-size: 1rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .food-item img {
-      width: 80px;
-      height: 80px;
-      margin-bottom: 10px;
-    }
-
-    .food-item button {
-      background: #ff4d4d;
-      color: white;
-      border: none;
-      padding: 10px 15px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-    }
-
-    .food-item button:hover {
-      background: #cc0000;
-    }
-
-    .back-button {
-      display: flex;
-      justify-content: flex-start;
-      margin-top: 30px;
-    }
-
-    .back-button button {
-      background: #ffffff;
-      color: #007EA7;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .back-button button:hover {
-      background: #005F73;
-      color: #ffffff;
-    }
-
-    .section-title {
-      background-color: #15445A;
-      border-radius: 12px;
-      padding: 10px 20px;
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 1.2rem;
-      font-weight: bold;
-    }
-
-    .deleted-title {
-      background-color: #15445A;
-      border-radius: 12px;
-      padding: 10px 20px;
-      text-align: center;
-      margin: 20px 0;
-      font-size: 1rem;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-    
-  <div class="container">
-    <div class="header">
-      
-      <div class="nav">
-        <button>الصفحة الرئيسية</button>
-        <button>إنشاء طلب</button>
-        <button>قائمة الطعام</button>
-        <button>مراقبة البيانات</button>
-        <button>المخزون</button>
-      </div>
+      <!-- Inventory -->
+      <a href="/html/Storginfo.html" class="flex flex-col items-center hover:text-gray-300">
+        <i class="fa fa-archive text-2xl mb-1"></i>
+        <span class="text-sm">المخزون</span>
+      </a>
     </div>
 
-    <div class="search">
-      <input type="text" placeholder="بحث عن أصناف">
-      <button>بحث</button>
+    <!-- Main Content Section -->
+    <div class="w-11/12 max-w-5xl mx-auto mt-12">
+      <!-- Header -->
+      <h1 class="text-2xl font-bold text-white text-center mb-6">المحذوفات:</h1>
+
+      <!-- Search and Filter -->
+      <div class="flex flex-wrap gap-4 justify-center items-center mb-6">
+        <input
+          type="text"
+          placeholder="بحث عن أصناف"
+          class="px-4 py-2 rounded-lg w-full sm:w-1/2 focus:outline-none shadow-md"
+        />
+        <div class="flex flex-wrap gap-2">
+          <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">الفول السوداني</span>
+          <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">اللبن</span>
+          <span class="bg-gray-200 px-3 py-1 rounded-full text-sm">غلوتين</span>
+        </div>
+      </div>
+
+      <!-- Food List After Deletion -->
+      <h2 class="text-xl font-bold text-white mb-4">قائمة الطعام الحالية بعد الحذف:</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Food Item -->
+        <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center gap-2">
+          <img src="/src/icons/peanut.png" alt="الفول السوداني" class="w-16 h-16" />
+          <p class="text-lg font-bold">الفول السوداني</p>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">منع</button>
+        </div>
+
+        <!-- Food Item -->
+        <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center gap-2">
+          <img src="/src/icons/milk.png" alt="اللبن" class="w-16 h-16" />
+          <p class="text-lg font-bold">اللبن</p>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">منع</button>
+        </div>
+
+        <!-- Food Item -->
+        <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center gap-2">
+          <img src="/src/icons/egg.png" alt="البيض" class="w-16 h-16" />
+          <p class="text-lg font-bold">البيض</p>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">منع</button>
+        </div>
+
+        <!-- Food Item -->
+        <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center gap-2">
+          <img src="/src/icons/gluten.png" alt="غلوتين" class="w-16 h-16" />
+          <p class="text-lg font-bold">غلوتين</p>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">منع</button>
+        </div>
+
+        <!-- Food Item -->
+        <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center gap-2">
+          <img src="/src/icons/soybean.png" alt="فول الصويا" class="w-16 h-16" />
+          <p class="text-lg font-bold">فول الصويا</p>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">منع</button>
+        </div>
+
+        <!-- Food Item -->
+        <div class="bg-white rounded-lg shadow-lg p-4 flex flex-col items-center gap-2">
+          <img src="/src/icons/fish.png" alt="السمك" class="w-16 h-16" />
+          <p class="text-lg font-bold">السمك</p>
+          <button class="bg-red-500 text-white px-4 py-2 rounded-lg text-sm">منع</button>
+        </div>
+      </div>
+
+      <!-- Add New Item Button -->
+      <div class="mt-8 flex justify-center">
+        <button class="bg-[#059669] text-white px-10 py-4 rounded-lg text-xl font-bold flex items-center gap-3 hover:bg-[#047857]">
+          <i class="fa fa-plus text-2xl"></i>
+          <span>العنصر غير موجود؟</span>
+        </button>
+      </div>
+
+      <!-- Back Button -->
+      <div class="mt-8 flex justify-center">
+        <a
+          href="/html/home.html"
+          class="bg-gray-200 text-gray-800 px-10 py-4 rounded-lg text-xl font-bold flex items-center gap-3 hover:bg-gray-300"
+        >
+          <i class="fa fa-arrow-left text-2xl"></i>
+          <span>الرجوع إلى الخلف</span>
+        </a>
+      </div>
     </div>
-
-    <div class="deleted-title">المحذوفات</div>
-
-    <div class="tags">
-      <span>الفول السوداني <button>&times;</button></span>
-      <span>اللبن <button>&times;</button></span>
-      <span>الغلوتين <button>&times;</button></span>
-    </div>
-
-    <div class="section-title">قائمة الطعام الحالية بعد الحذف:</div>
-
-    <div class="food-list">
-      <div class="food-item">
-        <img src="peanut.png" alt="الفول السوداني">
-        <p>الفول السوداني</p>
-        <button>منع</button>
-      </div>
-      <div class="food-item">
-        <img src="milk.png" alt="اللبن">
-        <p>اللبن</p>
-        <button>منع</button>
-      </div>
-      <div class="food-item">
-        <img src="egg.png" alt="البيض">
-        <p>البيض</p>
-        <button>منع</button>
-      </div>
-      <div class="food-item">
-        <img src="gluten.png" alt="الغلوتين">
-        <p>الغلوتين</p>
-        <button>منع</button>
-      </div>
-      <div class="food-item">
-        <img src="fish.png" alt="السمك">
-        <p>السمك</p>
-        <button>منع</button>
-      </div>
-    </div>
-
-    <div class="back-button">
-      <button onclick="history.back()">الرجوع إلى الخلف</button>
-    </div>
-    
-  </div>
-</body>
+  </body>
 </html>

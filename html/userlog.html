@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" href="/src/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إدخال كلمة المرور</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: Tajawal -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="h-screen flex flex-col items-center justify-center"
+    style="background: linear-gradient(180deg, #0ea5e9 0%, #115e59 100%);"
+  >
+    <!-- Logo -->
+    <div class="mb-12">
+      <img src="/src/logo.png" alt="Maqsaf Logo" class="w-48" />
+    </div>
+
+    <!-- Password Box -->
+    <div
+      class="bg-white text-black rounded-3xl shadow-lg p-8 w-11/12 max-w-lg text-center"
+    >
+      <p id="selectedUser" class="text-2xl font-bold mb-6"></p>
+      <p class="text-lg font-semibold mb-6">أدخل كلمة المرور</p>
+      <form onsubmit="handleLogin(event)">
+        <div class="mb-6">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="w-full border border-gray-300 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#0a4b56]"
+            placeholder="كلمة المرور"
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-[#0a4b56] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#083a43] transition-transform transform hover:scale-105"
+        >
+          تسجيل الدخول
+        </button>
+      </form>
+    </div>
+
+    <script>
+      // Retrieve and display the selected user
+      const selectedUser = sessionStorage.getItem("selectedUser");
+      if (!selectedUser) {
+        window.location.href = "/html/accounts.html"; // Redirect back if no user selected
+      } else {
+        document.getElementById("selectedUser").textContent =
+          "مرحباً، " + selectedUser;
+      }
+
+      // Handle form submission
+      function handleLogin(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+        const password = document.getElementById("password").value;
+
+        // Check password (you can add validation here if needed)
+        if (password) {
+          // Navigate to the home page
+          window.location.href = "/html/home.html";
+        } else {
+          alert("يرجى إدخال كلمة المرور");
+        }
+      }
+    </script>
+  </body>
+</html>
