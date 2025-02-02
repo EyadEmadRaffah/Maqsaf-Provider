@@ -197,28 +197,40 @@
   
 <!-- Food Items Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto max-w-6xl mt-8">
+
+
     <!-- Sandwich -->
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/egg-cheese-sandwich.png" alt="ساندوتش" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">ساندوتش جبنة بيضا</p>
+        
+        <p class="font-bold text-lg text-black">ساندوتش جبنة بيضا</p>
         <p class="text-sm text-gray-500">300 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$2.00</p>
-        <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
+        <p class="font-bold text-xl text-black">$2.00</p>
+        <div id="product-1-actions" class="mt-2">
+          <button
+            onclick="addToCart('product-1')"
+            id="product-1-add"
+            class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition"
+          >
+            Add
+          </button>
+        </div>
       </div>
     </div>
+    
   
     <!-- Tuna Sandwich -->
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/tuna-sandwich.png" alt="ساندوتش تونة" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">ساندوتش تونة</p>
+        <p class="font-bold text-lg text-black">ساندوتش تونة</p>
         <p class="text-sm text-gray-500">180 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$3.00</p>
+        <p class="font-bold text-xl text-black">$3.00</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -227,11 +239,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/fruit-salad.png" alt="سلطة فواكه" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">سلطة فواكه</p>
+        <p class="font-bold text-lg text-black">سلطة فواكه</p>
         <p class="text-sm text-gray-500">70 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$5.00</p>
+        <p class="font-bold text-xl text-black">$5.00</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -240,11 +252,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/cookie.png" alt="كوكيز شوكولاته" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">كوكيز شوكولاته</p>
+        <p class="font-bold text-lg text-black">كوكيز شوكولاته</p>
         <p class="text-sm text-gray-500">500 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$2.00</p>
+        <p class="font-bold text-xl text-black">$2.00</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -253,11 +265,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/croissant.png" alt="كرواسون ساده" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">كرواسون ساده</p>
+        <p class="font-bold text-lg text-black">كرواسون ساده</p>
         <p class="text-sm text-gray-500">150 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$3.00</p>
+        <p class="font-bold text-xl text-black">$3.00</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -266,11 +278,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/juice-box.png" alt="عصير" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">عصير طبيعي</p>
+        <p class="font-bold text-lg text-black">عصير طبيعي</p>
         <p class="text-sm text-gray-500">120 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$1.50</p>
+        <p class="font-bold text-xl text-black">$1.50</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -279,11 +291,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/pizza-slice.png" alt="شريحة بيتزا" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">شريحة بيتزا</p>
+        <p class="font-bold text-lg text-black">شريحة بيتزا</p>
         <p class="text-sm text-gray-500">220 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$4.00</p>
+        <p class="font-bold text-xl text-black">$4.00</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -292,11 +304,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/muffin.png" alt="كب كيك شوكولاتة" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">كب كيك شوكولاتة</p>
+        <p class="font-bold text-lg text-black">كب كيك شوكولاتة</p>
         <p class="text-sm text-gray-500">400 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$2.50</p>
+        <p class="font-bold text-xl text-black">$2.50</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -305,11 +317,11 @@
     <div class="menu-card bg-white p-4 rounded-lg flex items-center">
       <img src="/images/milkshake.png" alt="ميلك شيك" class="w-16 h-16" />
       <div class="ml-4 flex-grow">
-        <p class="font-bold text-lg">ميلك شيك</p>
+        <p class="font-bold text-lg text-black">ميلك شيك</p>
         <p class="text-sm text-gray-500">350 سعره حرارية</p>
       </div>
       <div class="flex flex-col items-center">
-        <p class="font-bold text-xl">$3.50</p>
+        <p class="font-bold text-xl text-black">$3.50</p>
         <button class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition">Add</button>
       </div>
     </div>
@@ -347,3 +359,73 @@
 
   </body>
 </html>
+
+<script>
+  const counts = {}; // لتخزين الأعداد لكل منتج
+
+  function addToCart(productId) {
+    counts[productId] = 1; // بدء العداد من 1
+    updateActions(productId);
+  }
+
+  function incrementCount(productId) {
+    if (!counts[productId]) counts[productId] = 0; // التأكد من وجود المنتج
+    counts[productId]++;
+    updateActions(productId);
+  }
+
+  function decrementCount(productId) {
+    if (counts[productId] > 0) counts[productId]--;
+    if (counts[productId] === 0) {
+      resetToAdd(productId);
+    } else {
+      updateActions(productId);
+    }
+  }
+
+  function resetToAdd(productId) {
+    const actionsDiv = document.getElementById(`${productId}-actions`);
+    actionsDiv.innerHTML = `
+      <button
+        onclick="addToCart('${productId}')"
+        id="${productId}-add"
+        class="bg-[#0ea5e9] text-white px-4 py-1 rounded-lg hover:bg-[#083a43] transition"
+      >
+        Add
+      </button>
+    `;
+  }
+
+  function updateActions(productId) {
+  const countElement = document.getElementById(`${productId}-count`);
+  if (countElement) {
+    countElement.textContent = counts[productId]; // تحديث الرقم فقط
+  } else {
+    // إنشاء العداد لأول مرة
+    const actionsDiv = document.getElementById(`${productId}-actions`);
+    actionsDiv.innerHTML = `
+      <div class="flex items-center gap-2">
+        <button
+          onclick="decrementCount('${productId}')"
+          class="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-700 transition"
+        >
+          -
+        </button>
+        <span id="${productId}-count" class="font-bold text-black text-lg" style="width: 2rem; text-align: center; display: inline-block;">${counts[productId]}</span>
+        <button
+          onclick="incrementCount('${productId}')"
+          class="bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700 transition"
+        >
+          +
+        </button>
+      </div>
+    `;
+  }
+}
+
+</script>
+
+<!-- for abdalelah and eyad, if anas didn't aprove the counter return
+  the first item and remove all js in thsi page BUT if he aprove then 
+  do the same thing to the first item to all items and then make sure 
+  the design is good-->
